@@ -9,5 +9,5 @@ object ArgsFromFolder extends App {
       List[File]()
     }
   }
-println(getListOfFiles("C:\\newprojects\\cmd-app\\notatki"))
+println(getListOfFiles(args(0)))
 }
