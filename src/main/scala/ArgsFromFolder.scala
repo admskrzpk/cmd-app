@@ -1,9 +1,13 @@
-import scala.io.Source
+import java.io.File
 
 object ArgsFromFolder extends App {
-  val line = Source
-    .fromFile(args(0))
-    .getLines
-    .flatMap(_.split("\\W+"))
-    .foreach(println)
+  def getListOfFiles(dir: String):List[File] = {
+    val d = new File(dir)
+    if (d.exists && d.isDirectory) {
+      d.listFiles.toList
+    } else {
+      List[File]()
+    }
+  }
+println(getListOfFiles("C:\\newprojects\\cmd-app\\notatki"))
 }
